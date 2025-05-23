@@ -1,0 +1,23 @@
+<div class="row g-4 px-4 pb-4">
+  <div class="col-md-6">
+    <div class="chat-card h-100">
+      <div class="chat-card-header">📄 學生作業內容</div>
+      <pre>{{ content }}</pre>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="chat-card h-100 border-start border-3 border-primary">
+      <div class="chat-card-header text-primary">🧠 AI 批改回饋</div>
+      <div class="markdown-body">{{ feedback | safe }}</div>
+    </div>
+  </div>
+</div>
+<!--<div class="chat-card">-->
+<!--  <div class="chat-card-header">📄 學生作業內容</div>-->
+<!--  <pre>{{ content }}</pre>-->
+<!--</div>-->
+
+<!--<div class="chat-card mt-3 border-start border-3 border-primary">-->
+<!--  <div class="chat-card-header text-primary">🧠 AI 批改回饋</div>-->
+<!--  <div class="markdown-body">{{ feedback | safe }}</div>-->
+<!--</div>-->

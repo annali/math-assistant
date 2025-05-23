@@ -1,0 +1,42 @@
+1 SonarQube
+SonarQube是一个用于代码质量管理的开源平台，用于管理多个编程语言源代码的质
+量。SonarQube通过插件机制可以集成不同的测试工具，代码分析工具，以及持续集
+成工具，比如 pmd-cpd、checkstyle、findbugs、Jenkins。通过不同的插件对这些
+结果进行再加工处理，以量化的方式度量代码质量的变化，从而方便地对不同规模和
+种类的工程进行代码质量管理。同时 SonarQube 还对大量的持续集成工具提供了接
+口支持，可以很方便地在持续集成中使用 SonarQube。 此外 SonarQube 的插件还
+可以对国际化以及报告文档化也有良好的支持。
+2 sonarLint 介绍
+SonarLint is an extension to your favorite IDE that provides on-the-fly
+feedback to developers on new bugs and quality issuesinjected into their
+code.
+Eclipse 或 IDEA，要求 Java 8
+Visual Studio，要求 2015 或 2017
+3 sonarLint 安装
+3.1 Eclipse 安装 sonarLint
+参考地址：
+http://jingyan.baidu.com/article/2a1383289bea98074a134ff6.html
+离线包下载地址：
+http://jenkins.sf-express.com/examples/org.sonarlint.eclipse.site-3.1.0.201705051000.zip
+3.2 IntelliJ IDEA 安装 sonarLint
+打开 IDEA，依次点击 File->Settings->Plugins->Browse repositories，
+弹出的对话框输入 sonarlint，并点击右侧的 install 按钮，安装后重启
+生效。
+4 开发工具使用 sonarqube 规则扫描
+4.1 Eclipse 添加 sonar 服务器
+打开 Eclipse，依次点击 Windows->Show view->Other，弹出的对话框选择 SonarQube
+Servers
+跳转到下图界面，双击 Connect to SonarQube server
+弹出界面中，URL输入：http://sonar.sf-express.com/
+点击上图Generate token按钮，通过域账号登录sonar服务器，获取sonar token
+拷贝 token 并填到 Eclipse 的 Username/Token 编辑框内，点“Test connection”按
+钮， 确认连通后，点“Finish”按钮。
+4.2 Eclipse 关联 SonarQube 记录。
+每个模块都需要关联 sonar 记录，否则无法取到服务器端的问题，如下图 itdd-link
+项目包含四个模块，主工程跟四个模块都需要关联sonar记录。
+如上图所示，项目名上右键，弹出对话框选择SonarLint->Bind to a SonarQube project
+点击SonarQube Project编辑框，输入sonar服务端的工程名，如下图所示，选择并点
+“finish”按钮。
+关联成功后，将在项目列表的项目名上看到sonar的logo
+依次给其他模块也关联上sonarQube project，选同一个记录。
+按以上步骤，可以同步本地工程与服务端Issue。
